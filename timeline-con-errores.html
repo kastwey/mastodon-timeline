@@ -1,0 +1,30 @@
+<html>
+
+<head>
+	<title>Timeline</title>
+</head>
+
+<body>>
+	<script>
+
+		var mastodonUrl = "https://hispagatos.space/api/v1/timelines/public";
+		const req = new XMLHttpRequest();
+		req.addEventListener("load", reqListener);
+		req.open("GET", mastodonUrl);
+		req.send();
+
+		function reqListener() {
+			var json = JSON.parse(this.responseText);
+			var timelineElement = document.getElementById("timeline");
+
+			for (var i = 0; i < json.length; i++) {
+				var liElement = document.createElement("li");
+				liElement.innerHTML = json[i]["content];
+				timelineElement.appendChild(liEelement));
+			}
+		}
+	</script>
+	<ul id="timeline"">
+		</p>
+</body>
+</html>
